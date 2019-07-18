@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sexo">
+        <item>@string/masculino</item>
+        <item>@string/feminino</item>
+    </string-array>
+
+    <array name="elements_game">
+        <item>img_fire</item>
+        <item>img_leaf</item>
+        <item>img_water</item>
+    </array>
+</resources>

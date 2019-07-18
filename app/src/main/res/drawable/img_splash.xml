@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/logo"
+        android:width="@dimen/dimen_banner"
+        android:height="@dimen/icon_header_size"
+        android:left="@dimen/icon_header_margin"
+        android:right="@dimen/icon_header_margin"/>
+</layer-list>
