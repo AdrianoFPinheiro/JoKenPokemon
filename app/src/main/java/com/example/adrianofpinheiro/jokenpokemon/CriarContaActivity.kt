@@ -57,13 +57,15 @@ class CriarContaActivity : AppCompatActivity() {
                 .setValue(user)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                        Toast.makeText(this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
+
                         val returnIntent = Intent()
                         returnIntent.putExtra("email", edEmail.text.toString())
                         setResult(RESULT_OK, returnIntent)
+                        Toast.makeText(this, "Usuário criado com sucesso", Toast.LENGTH_SHORT).show()
                         finish()
                     } else {
-                        Toast.makeText(this, "Erro ao criar o usuário", Toast.LENGTH_SHORT).show()
+
+                        // Toast.makeText(this, "Erro ao criar o usuário", Toast.LENGTH_SHORT).show()
                     }
                 }
     }

@@ -6,6 +6,4 @@ data class Usuario(
         val nick: String = "",
         val sexo: String = ""
 
-        /**Está tela deverá constar: inputs para e-mail, nome do usuário, nickname, sexo
-        (utilizar spinner para esse dado), senha do usuário e um botão para criar a conta.*/
 )

@@ -21,7 +21,10 @@ android {
         }
     }
 }
-
+final arch_version = '1.1.0'
+final retrofit_version = '2.3.0'
+final android_support_version = '27.1.1'
+final lottieVersion = '2.7.0'
 final firebase_version = '16.0.5'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -40,7 +43,13 @@ dependencies {
 
     implementation 'org.jetbrains.anko:anko-commons:0.10.7'// Fazer Ligação e Compartilhar
 
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation "android.arch.lifecycle:extensions:$arch_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
 apply plugin: 'com.google.gms.google-services'

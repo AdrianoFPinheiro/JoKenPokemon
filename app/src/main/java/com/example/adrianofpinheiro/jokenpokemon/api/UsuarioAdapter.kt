@@ -9,16 +9,16 @@ import com.example.adrianofpinheiro.jokenpokemon.R
 import com.example.adrianofpinheiro.jokenpokemon.model.Jogador
 import kotlinx.android.synthetic.main.usuario_item.view.*
 
-class UsuarioAdapter(private val usuarios: List<Jogador>,
+class UsuarioAdapter(private val jogadores: List<Jogador>,
                      private val context: Context,
                      val listener: (Jogador) -> Unit) : RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
 
 //Método que recebe o ViewHolder e a posição da lista.
 //Aqui é recuperado o objeto da lista de Objetos pela posição e associado à ViewHolder.
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val usuario= usuarios[position]
+        val jogador= jogadores[position]
         holder.let {
-            it.bindView(usuario, listener)
+            it.bindView(jogador, listener)
         }
     }
 
@@ -29,7 +29,7 @@ class UsuarioAdapter(private val usuarios: List<Jogador>,
     }
     //Método que deverá retornar quantos itens há na lista.
     override fun getItemCount(): Int {
-        return usuarios.size
+        return jogadores.size
     }
     /*
     Com o ViewHolder iremos relacionar o layout criado e adicionar os valores a ele*/

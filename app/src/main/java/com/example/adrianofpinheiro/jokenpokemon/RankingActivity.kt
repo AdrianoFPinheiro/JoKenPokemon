@@ -4,9 +4,13 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import com.example.adrianofpinheiro.jokenpokemon.api.PontuacaoService.getJokenPokemonAPI
 import com.example.adrianofpinheiro.jokenpokemon.api.UsuarioAdapter
 import com.example.adrianofpinheiro.jokenpokemon.model.Jogador
 import kotlinx.android.synthetic.main.activity_ranking.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RankingActivity : AppCompatActivity() {
 
@@ -14,8 +18,9 @@ class RankingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ranking)
 
-       // val usuarios: List<Jogador> =
-        val jogadores = jogadoresMock()
+       val jogadores = jogadoresMock()
+       // val jogadores = pegaJogador()
+
         rvListaUsuarios.adapter = UsuarioAdapter(jogadores, this, {
             Log.i("TAG", "MEU ITEM")
         })
@@ -23,16 +28,42 @@ class RankingActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         rvListaUsuarios.layoutManager = layoutManager
 
-   }
+    }
 
     private fun jogadoresMock(): List<Jogador> {
         return listOf(
-                Jogador(
-                        1111111,
-                        "Jogador Mock",
-                        8
-                )
-
+                Jogador("huifdashfiusa",
+                        "Mad Max",
+                        8),
+                Jogador("321421dsadfa",
+                        "Wally",
+                        10),
+                Jogador("32rewwrewdfa",
+                        "Zeuz",
+                        5),
+                Jogador("32gfsagsfaa",
+                        "...",
+                        100)
         )
+    }
+
+    private fun pegaJogador() {
+
+        val buscarPontuacao = getJokenPokemonAPI()
+                .buscarPontuacao()
+                .enqueue(object : Callback<List<Jogador>> {
+                    override fun onFailure(call: Call<List<Jogador>>?, t: Throwable?) {
+
+                    }
+
+                    override fun onResponse(call: Call<List<Jogador>>?, response: Response<List<Jogador>>?) {
+                        val pontuacao = response?.body()
+                        for (pont in pontuacao!!) {
+                            //tvPontos.text = pontuacao?.pontos
+                            Log.i("PONTUACAO", "${pont.nome} - ${pont.pontos}")
+                        }
+                    }
+                })
+
     }
 }

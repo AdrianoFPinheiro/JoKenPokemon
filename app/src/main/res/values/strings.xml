@@ -7,7 +7,7 @@
 
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
-    <string name="msg_confirma_logout">Deseja sair do</string>
+    <string name="msg_confirma_logout">Deseja sair do jogo?</string>
 
 
 </resources>
