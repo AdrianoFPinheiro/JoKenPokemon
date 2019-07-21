@@ -34,7 +34,7 @@ class FimDeJogoActivity : AppCompatActivity() {
         btJogarNovamente.setOnClickListener {
             val pontuacao = Jogador(null,
                     etNome.text.toString(),
-                    tvPontuacao.text.toString().toInt())
+                    tvPontuacao.text.toString())
 
             getJokenPokemonAPI()
                     .enviarPontos(pontuacao)

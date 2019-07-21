@@ -12,6 +12,6 @@ interface JokenPokemonAPI {
     @GET("/jokenpokemon/pontuacao")
     fun buscarPontuacao(): Call<List<Jogador>>
 
-    @POST("/jokenpokemon/jogador")
+    @POST("/jokenpokemon/pontuacao")
     fun enviarPontos(@Body jogador: Jogador): Call<Void>
 }

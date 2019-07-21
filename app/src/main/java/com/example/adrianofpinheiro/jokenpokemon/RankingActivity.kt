@@ -8,6 +8,7 @@ import com.example.adrianofpinheiro.jokenpokemon.api.PontuacaoService.getJokenPo
 import com.example.adrianofpinheiro.jokenpokemon.api.UsuarioAdapter
 import com.example.adrianofpinheiro.jokenpokemon.model.Jogador
 import kotlinx.android.synthetic.main.activity_ranking.*
+import kotlinx.android.synthetic.main.usuario_item.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,16 +35,16 @@ class RankingActivity : AppCompatActivity() {
         return listOf(
                 Jogador("huifdashfiusa",
                         "Mad Max",
-                        8),
+                        "70"),
                 Jogador("321421dsadfa",
                         "Wally",
-                        10),
+                        "30"),
                 Jogador("32rewwrewdfa",
                         "Zeuz",
-                        5),
+                        "20"),
                 Jogador("32gfsagsfaa",
                         "...",
-                        100)
+                        "100")
         )
     }
 
@@ -59,7 +60,7 @@ class RankingActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<List<Jogador>>?, response: Response<List<Jogador>>?) {
                         val pontuacao = response?.body()
                         for (pont in pontuacao!!) {
-                            //tvPontos.text = pontuacao?.pontos
+                           tvPontos.text = pont?.pontos
                             Log.i("PONTUACAO", "${pont.nome} - ${pont.pontos}")
                         }
                     }
