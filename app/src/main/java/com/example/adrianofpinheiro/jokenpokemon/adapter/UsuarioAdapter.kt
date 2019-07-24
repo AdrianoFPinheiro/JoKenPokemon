@@ -1,4 +1,4 @@
-package com.example.adrianofpinheiro.jokenpokemon.api
+package com.example.adrianofpinheiro.jokenpokemon.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

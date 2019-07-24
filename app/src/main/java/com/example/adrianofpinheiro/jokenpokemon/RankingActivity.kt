@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import com.example.adrianofpinheiro.jokenpokemon.api.PontuacaoService.getJokenPokemonAPI
-import com.example.adrianofpinheiro.jokenpokemon.api.UsuarioAdapter
+import com.example.adrianofpinheiro.jokenpokemon.adapter.UsuarioAdapter
 import com.example.adrianofpinheiro.jokenpokemon.model.Jogador
 import kotlinx.android.synthetic.main.activity_ranking.*
 import kotlinx.android.synthetic.main.usuario_item.*
